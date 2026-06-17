@@ -11,23 +11,32 @@ from urllib.parse import urlparse, parse_qs
 class LOD_V32_FIXED:
     def __init__(self):
         self.is_running = False
-        self.target_url = "http://192.168.1.1"
-        self.tg_owner = "@guts9984"
-        self.tg_channel = "https://t.me/+guts9984"
-        
+
     def brute_force_engine(self):
+        print("[1] 6 လုံး (Number)")
+        print("[2] 10 လုံး (Number)")
+        print("[3] 6 လုံး (English)")
+        choice = input("ရွေးချယ်ပါ (1/2/3): ")
+
         self.is_running = True
         while self.is_running:
-            part1 = "".join(random.choices("0123456789", k=6))
-            part2 = "".join(random.choices("0123456789", k=9))
-            part3 = "".join(random.choices("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ", k=6))
-            code = part1 + part2 + part3
+            if choice == "1":
+                code = "".join(random.choices("0123456789", k=6))
+            elif choice == "2":
+                code = "".join(random.choices("0123456789", k=10))
+            elif choice == "3":
+                code = "".join(random.choices("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ", k=6))
+            else:
+                print("မှားယွင်းနေပါသည်။")
+                break
+            
             print(f"Testing: {code}")
             time.sleep(0.1)
 
 if __name__ == "__main__":
     app = LOD_V32_FIXED()
     app.brute_force_engine()
+
 
 
 
