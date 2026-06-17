@@ -1,7 +1,22 @@
-import base64
-
-_RAW_SOURCE = """import os, time, random, uuid, sys, threading, requests, webbrowser
+import os
+import time
+import random
+import uuid
+import sys
+import threading
+import requests
+import webbrowser
 from urllib.parse import urlparse, parse_qs
+
+# ပြီးမှ Class စတင်ပါ
+class LOD_V32_FIXED:
+    def __init__(self):
+        # ... ကျန်တဲ့ ကုဒ်များ ...
+
+
+_RAW_SOURCE = """
+
+
 
 class LOD_V32_FIXED:
     def __init__(self):
