@@ -181,15 +181,17 @@ if __name__ == '__main__':
     engine.open_channel()
     engine.dynamic_banner()
     engine.menu()
-"""
-
-_b64_raw = base64.b64encode(_RAW_SOURCE.encode("utf-8")).decode("utf-8")
-_enc_payload = " ".join(f"{ord(c):08b}" for c in _b64_raw)
-
-def _runtime_exec():
-    _b64_str = "".join(chr(int(b, 2)) for b in _enc_payload.split(" "))
-    _decoded = base64.b64decode(_b64_str.encode("utf-8")).decode("utf-8")
-    exec(_decoded, globals())
+    def menu(self):
+        print(f"\n{self.R}[!] LOD NITRO ATTACK MENU")
+        print(f"{self.G}[1] Start Brute Force")
+        print(f"{self.R}[0] Exit")
+        choice = input("Select option: ")
+        if choice == "1":
+            self.brute_force_engine()
+        else:
+            sys.exit()
 
 if __name__ == "__main__":
-    _runtime_exec()
+    app = LOD_V32_FIXED()
+    app.menu()
+
